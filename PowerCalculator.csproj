@@ -61,18 +61,14 @@
 	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
 	  <None Remove="Resources\Images\icons8_about.png" />
 	  <None Remove="Resources\Images\icons8_about_white.png" />
+	  <None Remove="Resources\Images\icons8_clear.png" />
 	  <None Remove="Resources\Images\icons8_home.png" />
 	  <None Remove="Resources\Images\icon_power_calculator.png" />
 	  <None Remove="Resources\Images\icon_raio.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Include="C:\Users\victo\Desktop\MainPage.xaml" Link="MainPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />

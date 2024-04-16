@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.ObjectModel;
 using PowerCalculator.Model;
 
@@ -50,6 +51,12 @@ public partial class MainPage : ContentPage
                 break;
         }
 
+        SomaTotalConsumo();
+        
+    }
+
+    private void SomaTotalConsumo()
+    {
         double sumConsumo = 0;
         foreach (double x in totalConsumo)
         {
@@ -57,7 +64,6 @@ public partial class MainPage : ContentPage
         }
         lbConsumoTotal.Text = $"{sumConsumo.ToString("N2")} kWh";
     }
-
 
     private void ButtonCalcular_Clicked(object sender, EventArgs e)
     {
@@ -128,5 +134,14 @@ public partial class MainPage : ContentPage
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         await DisplayAlert("Sobre", "Developer by @yLith", "OK");
+    }
+
+    private void ToolbarItemClear_Clicked(object sender, EventArgs e)
+    {
+        collectionView1.ItemsSource = null;
+        totalConsumo.Clear();
+        SomaTotalConsumo();
+        count = 0;
+        Itens = new ObservableCollection<Item>();
     }
 }

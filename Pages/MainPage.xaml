@@ -5,6 +5,7 @@
              Title="Power Calculator">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ToolbarItemClear_Clicked" IconImageSource="icons8_clear.png"/>
         <ToolbarItem Clicked="ToolbarItem_Clicked" IconImageSource="icons8_about_white.png"/>
     </ContentPage.ToolbarItems>
 
@@ -50,7 +51,7 @@
 
         <Frame BackgroundColor="#E8E8E8">
             <ScrollView MaximumHeightRequest="180" MinimumHeightRequest="180">
-                <CollectionView x:Name="collectionView1" SelectionMode="Single">
+                <CollectionView x:Name="collectionView1">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame BackgroundColor="White" BorderColor="White" HeightRequest="100" Padding="8" Margin="0,0,0,8">
