@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PowerCalculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PowerCalculator.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="PowerCalculator"
+    FlyoutWidth="250">
+
+    <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" Style="{DynamicResource StyleTitlePage}"/>
+
+    <Shell.TitleView>
+        <HorizontalStackLayout>
+            <Grid ColumnDefinitions="auto,*,auto">
+                <Image Source="icon_power_calculator.png" Grid.Column="0" VerticalOptions="Center" Margin="0,0,5,0" WidthRequest="35" HeightRequest="35"/>
+                <Label Grid.Column="1" VerticalOptions="Center" Text="Power Calculator" FontFamily="Inter-Bold" FontSize="20" TextColor="White"/>
+            </Grid>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+</Shell>
