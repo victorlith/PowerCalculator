@@ -9,40 +9,28 @@
         <ToolbarItem Clicked="ToolbarItem_Clicked" IconImageSource="icons8_about_white.png"/>
     </ContentPage.ToolbarItems>
 
-    <VerticalStackLayout Margin="10,10">
-        <Frame BackgroundColor="#E8E8E8" Margin="0,0,0,10">
-            <Grid RowDefinitions="Auto, Auto, Auto, *, Auto" ColumnDefinitions="*, 10, Auto">
-                <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Descrição:" Style="{DynamicResource LabelCustomStyle1}"/>
+    <VerticalStackLayout Padding="15" Margin="10,10">
+        <Grid Margin="0,0,0,30" RowDefinitions="Auto, Auto, Auto, *, Auto" ColumnDefinitions="*, 10, Auto">
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Descrição:" Style="{DynamicResource LabelCustomStyle1}"/>
 
-                <Frame CornerRadius="5" Margin="0,0,0,10" Grid.Row="1" Grid.ColumnSpan="3" Padding="0">
-                    <Entry x:Name="entryDescricao" Placeholder="TV" MaxLength="30" Style="{DynamicResource EntryCustomStyle1}"/>
-                </Frame>
+            <Frame  CornerRadius="5" Margin="0,0,0,10" Grid.Row="1" Grid.ColumnSpan="3" Padding="0">
+                <Entry BackgroundColor="#E8E8E8" x:Name="entryDescricao" Placeholder="TV" MaxLength="30" Style="{DynamicResource EntryCustomStyle1}"/>
+            </Frame>
 
-                <Label HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" Text="Potência(W):" Style="{DynamicResource LabelCustomStyle1}"/>
+            <Label HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" Text="Potência(W):" Style="{DynamicResource LabelCustomStyle1}"/>
 
-                <Frame CornerRadius="5" Grid.Row="3" Grid.Column="0" Padding="0">
-                    <Entry x:Name="entryPotencia" Keyboard="Numeric"  Placeholder="0" Style="{DynamicResource EntryCustomStyle1}"/>
-                </Frame>
+            <Frame CornerRadius="5" Grid.Row="3" Grid.Column="0" Padding="0">
+                <Entry BackgroundColor="#E8E8E8" x:Name="entryPotencia" Keyboard="Numeric"  Placeholder="0" Style="{DynamicResource EntryCustomStyle1}"/>
+            </Frame>
 
-                <Label HorizontalOptions="Start" Grid.Row="2" Grid.Column="2" Text="Tempo de uso:" Style="{DynamicResource LabelCustomStyle1}"/>
+            <Label HorizontalOptions="Start" Grid.Row="2" Grid.Column="2" Text="Tempo de uso:" Style="{DynamicResource LabelCustomStyle1}"/>
 
-                <Frame CornerRadius="5" Grid.Row="3" Grid.Column="2" HorizontalOptions="Start" Padding="0">
-                    <Entry x:Name="entryTempoUso" WidthRequest="70" Keyboard="Numeric" Placeholder="0" Style="{DynamicResource EntryCustomStyle1}"/>
-                </Frame>
-
-                <Frame CornerRadius="5" HorizontalOptions="End" WidthRequest="50" Grid.Row="3" Grid.Column="3" Padding="0">
-                    <Picker x:Name="pickerUnidadeTempo" Title="Tempo de uso:" WidthRequest="50"  BackgroundColor="White">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>min</x:String>
-                                <x:String>hora</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
-                </Frame>
-                <Button Clicked="ButtonCalcular_Clicked" Margin="0,10,0,0" Grid.Row="4" Grid.ColumnSpan="3" Text="Clacular" TextColor="White" FontSize="20" FontFamily="Inter-Bold" BackgroundColor="#FECF10"/>
-            </Grid>
-        </Frame>
+            <Frame CornerRadius="5" Grid.Row="3" Grid.Column="2"  Padding="0">
+                <Entry BackgroundColor="#E8E8E8" x:Name="entryTempoUso" Keyboard="Numeric" Placeholder="0" Style="{DynamicResource EntryCustomStyle1}"/>
+            </Frame>
+            
+            <Button Clicked="ButtonCalcular_Clicked" Margin="0,30,0,0" Grid.Row="4" Grid.ColumnSpan="3" Text="Clacular" TextColor="White" FontSize="20" FontFamily="Inter-Bold" BackgroundColor="#FECF10"/>
+        </Grid>
 
         <Grid Padding="15,0,15,0" Margin="0,5" ColumnDefinitions="Auto, *">
             <Label HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" Text="Consumo Total:" Style="{DynamicResource LabelCustomStyle1}"/>
@@ -66,7 +54,7 @@
                                     <Label Text="{Binding TempoDeUso}" Grid.Row="2" Grid.Column="1" Style="{DynamicResource LabelCustomStyle3}"/>
 
                                     <Frame Padding="5,0,5,0" BorderColor="#FECF10" Grid.Row="2" Grid.Column="2" HeightRequest="30" MaximumWidthRequest="115" BackgroundColor="#FECF10">
-                                        <Label Text="{Binding ConsumoEnergia}"  FontSize="14" FontFamily="Inter-Bold" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                        <Label Text="{Binding ConsumoEnergia, StringFormat='{0:.00} kWh'}"  FontSize="14" FontFamily="Inter-Bold" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
                                     </Frame>
                                 </Grid>
                             </Frame>
