@@ -42,22 +42,24 @@
                 <CollectionView x:Name="collectionView1">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame BackgroundColor="White" BorderColor="White" HeightRequest="100" Padding="8" Margin="0,0,0,8">
-                                <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="110, *, Auto">
+                            <VerticalStackLayout Padding="{OnPlatform WinUI='0,0,0,5', Android='0,0,0,8'}">
+                                <Frame BackgroundColor="White" BorderColor="White" HeightRequest="100" Padding="8" >
+                                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="110, *, Auto">
 
-                                    <Label Text="{Binding Descricao}" Grid.Row="0" Grid.ColumnSpan="3" TextColor="Black" FontFamily="Inter-Bold" FontSize="16" HorizontalOptions="Start" Margin="0"/>
+                                        <Label Text="{Binding Descricao}" Grid.Row="0" Grid.ColumnSpan="3" TextColor="Black" FontFamily="Inter-Bold" FontSize="16" HorizontalOptions="Start" Margin="0"/>
 
-                                    <Label Grid.Row="1" Grid.Column="0" Text="Potência(W):" Style="{DynamicResource LabelCustomStyle2}"/>
-                                    <Label Text="{Binding PotenciaWatts}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource LabelCustomStyle3}"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="Potência(W):" Style="{DynamicResource LabelCustomStyle2}"/>
+                                        <Label Text="{Binding PotenciaWatts}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource LabelCustomStyle3}"/>
 
-                                    <Label Grid.Row="2" Grid.Column="0" Text="Tempo de uso:" Style="{DynamicResource LabelCustomStyle2}"/>
-                                    <Label Text="{Binding TempoDeUso}" Grid.Row="2" Grid.Column="1" Style="{DynamicResource LabelCustomStyle3}"/>
+                                        <Label Grid.Row="2" Grid.Column="0" Text="Tempo de uso:" Style="{DynamicResource LabelCustomStyle2}"/>
+                                        <Label Text="{Binding TempoDeUso}" Grid.Row="2" Grid.Column="1" Style="{DynamicResource LabelCustomStyle3}"/>
 
-                                    <Frame Padding="5,0,5,0" BorderColor="#FECF10" Grid.Row="2" Grid.Column="2" HeightRequest="30" MaximumWidthRequest="115" BackgroundColor="#FECF10">
-                                        <Label Text="{Binding ConsumoEnergia, StringFormat='{0:.00} kWh'}"  FontSize="14" FontFamily="Inter-Bold" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    </Frame>
-                                </Grid>
-                            </Frame>
+                                        <Frame Padding="5,0,5,0" BorderColor="#FECF10" Grid.Row="2" Grid.Column="2" HeightRequest="30" MaximumWidthRequest="115" BackgroundColor="#FECF10">
+                                            <Label Text="{Binding ConsumoEnergia, StringFormat='{0:.00} kWh'}"  FontSize="14" FontFamily="Inter-Bold" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                            </VerticalStackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
